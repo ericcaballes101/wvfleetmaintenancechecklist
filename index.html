@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vehicle Maintenance and Condition Report</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="org" id="org"></div>
+  <h1>Vehicle Maintenance and Condition Report</h1>
+  <div class="dept" id="dept"></div>
+</header>
+
+<form id="form" autocomplete="off" novalidate>
+  <section class="card">
+    <h2>Vehicle Details</h2>
+    <div class="grid">
+      <label>Month <input type="month" name="month" required></label>
+      <label>Date <input type="date" name="date" required></label>
+      <label>Vehicle Plate <input name="plate" required autocapitalize="characters"></label>
+      <label>Model <input name="model" required></label>
+      <label>Assigned Driver <input name="driver" required></label>
+      <label>Current Mileage (km) <input type="number" inputmode="numeric" name="mileage" min="0" required></label>
+      <label>Next Change Oil (km) <input type="number" inputmode="numeric" name="nextOil" min="0"></label>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Maintenance / Repair During the Month</h2>
+    <p class="hint">Leave blank if none. Tap “Add row” if you need more.</p>
+    <div id="maint"></div>
+    <button type="button" class="btn ghost" id="addMaint">+ Add row</button>
+  </section>
+
+  <section class="card">
+    <h2>Monthly Checklist <small>(P.O.W.D.E.R-E)</small></h2>
+    <div id="checklist"></div>
+  </section>
+
+  <section class="card">
+    <h2>Overall Condition</h2>
+    <label class="check"><input type="checkbox" name="allGood"> 100% — Vehicle in good and running condition</label>
+    <label>Remarks <textarea name="overallRemarks" rows="2"></textarea></label>
+    <label>Please indicate any scratches or damages <textarea name="damages" rows="4"></textarea></label>
+    <label class="check"><input type="checkbox" name="incidentForm"> Incident Report Form attached / submitted</label>
+  </section>
+
+  <section class="card">
+    <h2>Sign-off</h2>
+    <div class="grid">
+      <label>Driver’s Name <input name="driverSign" required></label>
+      <label>Date <input type="date" name="driverSignDate" required></label>
+    </div>
+    <p class="hint">Driver signature (draw with finger or mouse)</p>
+    <div class="sig"><canvas id="sig" height="140"></canvas><button type="button" class="btn ghost small" id="sigClear">Clear</button></div>
+    <p class="print-only sup">Supervisor’s signature: ______________________________ &nbsp; Date: ______________</p>
+  </section>
+
+  <div class="actions no-print">
+    <div id="msg" role="status"></div>
+    <button type="button" class="btn primary" id="submit">Submit report</button>
+    <button type="button" class="btn" id="csv">Download CSV</button>
+    <button type="button" class="btn" id="print">Print / Save PDF</button>
+    <button type="button" class="btn" id="email">Email report</button>
+    <button type="button" class="btn danger" id="reset">New report</button>
+  </div>
+</form>
+
+<footer class="no-print">Your entries are saved automatically on this device until you start a new report.</footer>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
