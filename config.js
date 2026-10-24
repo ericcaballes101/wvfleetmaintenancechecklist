@@ -5,8 +5,8 @@ window.CONFIG = {
   // Optional: paste your Google Apps Script Web App URL here (see README.md)
   // so every submitted report lands in a Google Sheet automatically.
   // Leave "" to disable (drivers can still Download CSV / Print-Save PDF).
-  SUBMIT_URL: "https://formspree.io/f/mvkkgopq",
+  SUBMIT_URL: "",
   // Optional: where the "Email report" button sends the summary
-  SUPERVISOR_EMAIL: "eric_caballes@wvi.org",
+  SUPERVISOR_EMAIL: "",
   maintenanceRows: 6
 };
