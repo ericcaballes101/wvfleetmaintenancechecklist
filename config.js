@@ -2,7 +2,7 @@
 window.CONFIG = {
   organization: "World Vision Development Foundation",
   department: "Fleet",
-  SUBMIT_URL: "https://formspree.io/f/mvkkgopq", 
+  SUBMIT_URL: "", 
   SUPERVISOR_EMAIL: "",
   maintenanceRows: 6
 };
