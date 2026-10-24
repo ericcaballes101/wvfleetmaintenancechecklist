@@ -202,7 +202,6 @@
   }
 
   $("#submit").onclick = submit;
-  $("#csv").onclick = downloadCSV;
   $("#email").onclick = emailReport;
   $("#print").onclick = () => { if (validate()) window.print(); };
   $("#reset").onclick = () => {
